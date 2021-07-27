@@ -3,6 +3,9 @@ uuid = "8da1963a-5dcd-40a7-8729-e9c6305a8fe7"
 authors = ["Kusti Skytén <kskyten@users.noreply.github.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
+
 [compat]
 julia = "1"
 
