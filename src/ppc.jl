@@ -26,12 +26,11 @@ function ppc_rootogram(y, yrep; prob=0.9, kwargs...)
 end
 
 function ppc_stat(y, yrep; kwargs...)
-    f = Figure()
-    Axis(f[1, 1])
     fun = get(kwargs, :stat, mean)
-    hist!(fun.(yrep))
+    fig, ax, po = hist(fun.(yrep))
+    vlines!(ax, [fun(y)], color=:black, linewidth=3)
 
-    return f
+    return fig
 end
 
 function ppc_intervals(y, yrep; kwargs...)
