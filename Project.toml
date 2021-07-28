@@ -4,7 +4,9 @@ authors = ["Kusti Skytén <kskyten@users.noreply.github.com> and contributors"]
 version = "0.1.0"
 
 [deps]
+AlgebraOfGraphics = "cbdf2221-f076-402e-a563-3d30da359d67"
 Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 
 [compat]
 julia = "1"

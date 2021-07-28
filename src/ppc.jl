@@ -1,18 +1,23 @@
 using Statistics
+using Makie
 
 function ppc_dens_overlay(y, yrep; kwargs...)
     f = Figure()
     Axis(f[1, 1])
-    density!(y, color=:transparent, strokecolor = :black, strokewidth=2)
+    Makie.density!(y, color=:transparent, strokecolor = :black, strokewidth=2)
 
     for yr in yrep
-        density!(yr, color=:transparent, strokecolor=(:blue, 0.1), strokewidth=1)
+        Makie.density!(yr, color=:transparent, strokecolor=(:blue, 0.1), strokewidth=1)
     end
 
     return f
 end
 
-function ppc_rootogram(y, yrep; kwargs...)
+function ppc_rootogram(y, yrep; prob=0.9, kwargs...)
+    alpha = (1 - prob) / 2
+    probs = [alpha, 1 - alpha]
+    ymax = maximum([y; flatten(yrep)])
+
     f = Figure()
     Axis(f[1, 1])
     hist!(y)
